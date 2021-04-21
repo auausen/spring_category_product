@@ -3,14 +3,14 @@
 
 <head>
 	<meta>
-	<title>List Products</title>
+	<title>List Brands</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
 </head>
 
 <body>
 	<div class="container text-center">
 		<div>
-			<h1>product list</h1>
+			<h1>Brand List</h1>
 		</div>
 		<div>
 			<table class="table table-bordered">
@@ -18,24 +18,18 @@
 					<tr>
 						<th>ID</th>
 						<th>Name</th>
-						<th>Price</th>
-						<th>Category</th>
-						<th>Detail</th>
+						<th>Categories</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<th:block th:each="product: ${listProducts}">
+					<th:block th:each="brand: ${listBrands}">
 						<tr>
-							<td>[[${product.id}]]</td>
-							<td>[[${product.name}]]</td>
-							<td>[[${product.price}]]</td>
-							<td>[[${product.category.name}]]</td>
-							<td>[[${product.details}]]</td>
+							<td>[[${brand.id}]]</td>
+							<td>[[${brand.name}]]</td>
+							<td>[[${brand.categories}]]</td>
 							<td>
-								<a th:href="@{'/products/edit/' + ${product.id}}">Edit</a>
-								&nbsp;
-								<a th:href="@{'/products/delete/' + ${product.id}}">delete</a>
+								<a th:href="@{'/brands/edit/' + ${brand.id}}">Edit</a>
 							</td>
 						</tr>
 					</th:block>
